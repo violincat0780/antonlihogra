@@ -44,20 +44,15 @@ HEADER
 
 
 .header{
-
-background:linear-gradient(
-180deg,
-#595754 0%,
-#4A4A4A 100%
-);
-
-border-bottom:1px solid rgba(255,255,255,.08);
-position:sticky;
-top:0;
-z-index:1000;
+   background:linear-gradient(
+   180deg,
+   #595754 0%,
+   #4A4A4A 100%);
+   border-bottom:1px solid rgba(255,255,255,.08);
+   position:sticky;
+   top:0;
+   z-index:1000;
 }
-
-
 
 .nav{
     min-width: 0;
@@ -431,8 +426,6 @@ HERO
   background: url('../images/muscules.png') no-repeat center top;
   background-size: contain;
   opacity: 0.08; /* прозрачность */
-  brightness(1.1)
-  blur(1px)
   pointer-events: none; /* чтобы не мешал клику по списку */
   z-index: 0;
 }
@@ -794,7 +787,7 @@ text-align: right;
     top: 50%;
     right: -50px; /* привязка к правому краю контейнера */
     /*transform: translateY(-50%);*/
-    width: 380px;
+    width: 360px;
     height: 100%;
     background: url('../images/massage.png') no-repeat center;
     background-size: contain;
@@ -806,7 +799,7 @@ text-align: right;
 
 @keyframes breathing{
     0%{
-        opacity:.12;
+        opacity:.1;
         transform:translateY(-50%);
     }
     50%{
@@ -814,7 +807,7 @@ text-align: right;
         transform:translateY(calc(-50% - 15px));
     }
     100%{
-        opacity:.12;
+        opacity:.1;
         transform:translateY(-50%);
     }
 }
@@ -1153,12 +1146,31 @@ text-align: right;
   width: 24px;
   height: 24px;
 }
+
+img.contact-icon[alt="MAX"]{
+  width: 18px;
+  height: 18px;
+  margin-left: 4px;
+}
 .contact-icon svg {
     width: 20px;   /* одинаковая ширина */
     height: 20px;  /* одинаковая высота */
     fill: #F3EDE6; /* цвет текста */
     flex-shrink: 0; /* чтобы не сжимались */
     margin-right: 6px; /* небольшой отступ справа от иконки */
+}
+
+.contact-row{
+  display:flex;
+  width:100%;
+  align-items:center;
+  gap:8px;
+  text-decoration:none;
+  color:inherit;
+}
+
+.contact-row:hover{
+  opacity:.88;
 }
 
 .contact-right .btn-hero {
@@ -1612,7 +1624,7 @@ HERO TABLET 426–768
         width: 100%;
         max-width: 100%;
         height: auto;
-        min-height: 110px;
+        min-height: unset;
         padding: 12px 10px;
         gap: 8px;
     }
@@ -1723,7 +1735,7 @@ HERO 425
     .feature {
         width: 100%;
         max-width: 100%;
-        min-height: 96px;
+        min-height: unset;
         height: auto;
         padding: 12px 12px;
         gap: 10px;
@@ -1783,7 +1795,7 @@ HERO 320
     }
 
     .feature {
-        min-height: 90px;
+        min-height: unset;
         padding: 10px 10px;
     }
 
@@ -1858,7 +1870,7 @@ WORK BLOCK TABLET 769–1024
     height: auto;
     background-position: center top;
     background-size: contain;
-    opacity: 0.07;
+    opacity: 0.08;
     }
 }
 
@@ -1933,7 +1945,7 @@ WORK BLOCK FINAL 451–768
         bottom: 0;
         width: 360px;
         height: auto;
-        opacity: 0.05;
+        opacity: 0.08;
         background-size: contain;
         background-position: center top;
     }
@@ -2002,7 +2014,7 @@ WORK BLOCK 450
         left:0;
         right: 50%;
         transform: translateX(50%);
-        opacity: 0.07;
+        opacity: 0.08;
     }
 }
 
@@ -2071,7 +2083,7 @@ WORK BLOCK 320
         top: 60px;
         right: 50%;
         transform: translateX(40%);
-        opacity: 0.07;
+        opacity: 0.08;
     }
 }
 
@@ -2398,10 +2410,17 @@ SERVICES PRICES MOBILE FIX
     font-size: 14px;
     line-height: 1.35;
   }
-  .subscription-note:hover {
-    transform: none;
-    font-size: 14px;
-  }
+  .service-card:active {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.subscription-note:active {
+  transform: scale(1.05);
+  box-shadow:
+    0 0 12px rgba(255,255,255,0.9),
+    0 0 25px rgba(225,240,255,0.8);
+}
   .services-prices .services-grid > * {
     min-width: 0;
   }
@@ -2625,16 +2644,16 @@ ABOUT 451–768
     .about-signature{
         font-size: 42px;
         text-align: right;
-    margin-top: 6px;
-    padding-right: 8px;
+        margin-top: 6px;
+        padding-right: 8px;
     }
     .about-container::after{
-        top: 38%;
+        top: 48%;
         right: 10px;
-        width: 280px;
-        height: 280px;
+        width: 240px;
+        height: 240px;
         background-size: contain;
-        opacity: .1;
+        opacity: .03;
      }
 }
 
@@ -2689,12 +2708,12 @@ ABOUT 321–450
     padding-right: 8px;
     }
     .about-container::after{
-        top: 68%;
+        top: 74%;
         right: 10px;
-        width: 240px;
-        height: 240px;
+        width: 200px;
+        height: 200px;
         background-size: contain;
-        opacity: .1;
+        opacity: .03;
      }
 }
 /* =======================
@@ -2732,11 +2751,11 @@ ABOUT 320
     }
 
     .about-container::after{
-        top: 68%;
+        top: 74%;
         right: 10px;
         width: 180px;
         height: 180px;
-        opacity: .1;
+        opacity: .03;
     }
 }
   /* =======================
