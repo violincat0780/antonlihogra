@@ -36,7 +36,7 @@
 
         </div>
 
-        <nav>
+        <nav class="header-nav" id="headerNav">
             <a href="#work">Работаю</a>
             <a href="#session">Сеанс</a>
             <a href="#services">Услуги</a>
@@ -50,7 +50,13 @@
             Записаться
         </a>
 
-    </div>
+        <button class="burger-btn" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="headerNav">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        </div>
 
 </header>
 
@@ -374,7 +380,7 @@ items.forEach(img => {
           <img src="icons/lotos.svg" alt="Лотос">
       </div>
       <div class="location-photo">
-        <img src="images/cabinet.png" alt="Кабинет массажа">
+        <img src="images/cabinet.webp" alt="Кабинет массажа">
       </div>
     </div>
   </section>
@@ -474,7 +480,27 @@ function init() {
 
 </section>
 
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const navWrap = document.querySelector('.nav');
+    const burgerBtn = document.querySelector('.burger-btn');
+    const headerNav = document.getElementById('headerNav');
 
+    if (!navWrap || !burgerBtn || !headerNav) return;
+
+    burgerBtn.addEventListener('click', function () {
+        const isOpen = navWrap.classList.toggle('menu-open');
+        burgerBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    headerNav.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function () {
+            navWrap.classList.remove('menu-open');
+            burgerBtn.setAttribute('aria-expanded', 'false');
+        });
+    });
+});
+</script>
 
 
 
