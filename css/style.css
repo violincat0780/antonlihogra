@@ -1147,11 +1147,7 @@ text-align: right;
   height: 24px;
 }
 
-img.contact-icon[alt="MAX"]{
-  width: 18px;
-  height: 18px;
-  margin-left: 4px;
-}
+
 .contact-icon svg {
     width: 20px;   /* одинаковая ширина */
     height: 20px;  /* одинаковая высота */
