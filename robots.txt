@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://violincat0780.github.io/antonlihogra/sitemap.xml
